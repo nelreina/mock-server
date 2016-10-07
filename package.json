@@ -6,9 +6,10 @@
   "scripts": {
     "test": "jest",
     "dev": "nodemon --watch src --exec babel-node src/index",
+    "build:package-json": "babel-node ./build",
     "build:babel": "babel src --out-dir dist",
     "copy:config": "cp ./src/config.json ./dist",
-    "prestart": "npm-run-all build:babel copy:config",
+    "prestart": "npm-run-all build:babel build:package-json copy:config",
     "start": "node dist/index"
   },
   "keywords": [
@@ -36,6 +37,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-runtime": "^6.11.6",
     "nodemon": "^1.10.2",
-    "npm-run-all": "^3.1.0"
+    "npm-run-all": "^3.1.0",
+    "write-json-file": "^2.0.0"
   }
 }
