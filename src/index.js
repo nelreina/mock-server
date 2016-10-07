@@ -9,7 +9,7 @@ const app = express();
 app.use(morgan('combined'));
 app.use(cors());
 
-log('Starting Node Express Application with Babel');
+log('Starting Mock Server');
 
 app.get('/', function (req, res) {
   res.send('hello, world!')
