@@ -1,2 +1,2 @@
 # node-express-server
-NodeJS server with Babel ES2015 Express Starter
+Server based on nelreina/node-express-server
