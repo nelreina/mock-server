@@ -8,7 +8,7 @@
     "dev": "nodemon --watch src --exec babel-node src/index",
     "build:babel": "babel src --out-dir dist",
     "copy:config": "cp ./src/config.json ./dist",
-    "prestart": "npm-run-all build:babel copy:config",
+    "build": "npm-run-all build:babel copy:config",
     "start": "node dist/index"
   },
   "keywords": [
