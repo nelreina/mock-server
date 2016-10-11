@@ -9,7 +9,8 @@
     "build:package-json": "babel-node ./build",
     "build:babel": "babel src --out-dir dist",
     "copy:config": "cp ./src/config.json ./dist",
-    "prestart": "npm-run-all build:babel build:package-json copy:config",
+    "build": "npm-run-all build:babel build:package-json copy:config",
+    "prestart": "npm-run-all build",
     "start": "node dist/index"
   },
   "keywords": [

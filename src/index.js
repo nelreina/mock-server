@@ -12,7 +12,7 @@ app.use(cors());
 log('Starting Mock Server');
 
 app.get('/', function (req, res) {
-  res.send('hello, world!')
+  res.send('hello, travis world!')
 });
 
 // Not Found Routes
