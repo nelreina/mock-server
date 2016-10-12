@@ -10,6 +10,7 @@
     "build:babel": "babel src --out-dir dist",
     "copy:config": "cp ./src/config.json ./dist",
     "build": "npm-run-all build:babel build:package-json copy:config",
+    "postbuild": "publish.sh",
     "prestart": "npm-run-all build",
     "start": "node dist/index"
   },
