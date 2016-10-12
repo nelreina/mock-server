@@ -1,8 +1,8 @@
 import writeJsonFile from 'write-json-file';
-import { name, version, main, dependencies } from './package.json';
+import { name, version, main, port, dependencies } from './package.json';
 
 const prodPackageJson = {
-  name, version, main, dependencies
+  name, version, main, port, dependencies
 };
 
 writeJsonFile( './dist/package.json', prodPackageJson)
