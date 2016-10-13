@@ -12,7 +12,7 @@ import connectMongo from 'connect-mongo';
 const MongoStore = connectMongo(session);
 
 import api from './routes/api';
-import config from '../package.json';
+import config from './config.json';
 
 const log = console.log;
 const app = express();

@@ -10,7 +10,8 @@
     "dev": "nodemon --watch src --exec babel-node src/index",
     "build:package-json": "babel-node ./build",
     "build:babel": "babel src --out-dir dist",
-    "build": "npm-run-all build:babel build:package-json",
+    "build": "npm-run-all build:babel build:package-json copy:config",
+    "copy:config": "cp ./src/config.json ./dist/config.json",
     "postbuild": "publish.sh",
     "prestart": "npm-run-all build",
     "start": "node dist/index"
