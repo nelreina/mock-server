@@ -11,7 +11,7 @@ import connectMongo from 'connect-mongo';
 
 const MongoStore = connectMongo(session);
 
-import api from './routes/api';
+import auth from './routes/auth';
 import config from './config.json';
 
 const log = console.log;
@@ -51,7 +51,7 @@ app.use(passport.session());
 
 log('Starting Mock Server');
 
-app.use('/api', api);
+app.use('/v2/auth', auth);
 
 // Not Found Routes
 app.all('/*', (req, res)=>{
