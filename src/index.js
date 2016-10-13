@@ -4,9 +4,13 @@ import morgan from 'morgan';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 
+import api from './routes/api';
+
 const log = console.log;
 const app = express();
-import { port } from '../package.json';
+import config from '../package.json';
+
+const port = config.port || 3000;
 
 app.use(cors());
 app.use(morgan('combined'));
@@ -15,11 +19,7 @@ app.use(bodyParser.json())
 
 log('Starting Mock Server');
 
-app.post('/api', (req, res) => {
-  log(req.body);
-  const { body:data } = req;
-  res.send({ response: 'OK', data });
-})
+app.use('/api', api);
 
 // Not Found Routes
 app.all('/*', (req, res)=>{
